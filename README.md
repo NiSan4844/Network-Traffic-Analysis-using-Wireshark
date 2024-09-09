@@ -133,7 +133,7 @@ This guide walks through the process of analyzing Remote Desktop Protocol (RDP) 
 
 #### 2. Which user account was used to initiate the RDP connection?
 
-- The user account used for the RDP session can be found by examining the record labeled **Ignored Unknown Record** when filtering on `tcp.port == 3389`. The username is visible in the ASCII output.
+- The user account used for the RDP session can be found by examining the record labeled **Ignored Unknown Record** when filtering on `tcp.port == 3389`. The username is visible in the ASCII output which is `bucky`.
 
 ### Summary
 
