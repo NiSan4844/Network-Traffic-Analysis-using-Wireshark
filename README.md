@@ -1,5 +1,6 @@
 # Network Traffic Analysis Project - Suspicious Traffic Investigation
 
+
 ## Project Summary
 This project involved investigating suspicious network traffic originating from a specific host within the network. We used Wireshark to analyze PCAP files and identified malicious activity, which led to the infiltration of a host, user creation with elevated privileges, and suspicious commands being executed.
 
