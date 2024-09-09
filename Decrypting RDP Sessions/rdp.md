@@ -16,11 +16,16 @@ This guide walks through the process of analyzing Remote Desktop Protocol (RDP) 
     ```bash
     rdp
     ```
+
+    ![S1 rdp](https://github.com/user-attachments/assets/5662e8f6-f788-434b-9bf4-46b6993a9a9b)
+
 3. **Verify RDP Traffic via TCP Port 3389**: RDP typically uses TCP port 3389. To verify if RDP traffic exists in the capture, apply a display filter:
     ```bash
     tcp.port == 3389
     ```
 4. **Confirm Session Establishment**: By filtering on `tcp.port == 3389`, you should see a TCP session established between the two hosts over port 3389.
+
+    ![S1 session established](https://github.com/user-attachments/assets/1f89a21d-1455-4f83-94e6-70465c352ecb)
 
 ### Task #3: Decrypt the Traffic
 
@@ -34,7 +39,12 @@ This guide walks through the process of analyzing Remote Desktop Protocol (RDP) 
      - **Protocol**: Leave blank or set to `tpkt`
      - **Key File**: Browse to and select `server.key`.
    - Click **Save** and refresh the `.pcapng` file.
+        
+     ![S1 session established](https://github.com/user-attachments/assets/247c6c06-7ab4-405c-8ad3-ec3b10a4cfad)
+
 3. **View Decrypted RDP Traffic**: Once the key is added, apply the `rdp` filter again, and now you should see decrypted RDP traffic in the clear.
+
+    ![S4 rdp in the clear](https://github.com/user-attachments/assets/47bbeef3-5476-4d42-a6cd-1d8f4f885ad9)
 
 ### Task #4: Perform Analysis on the Decrypted Traffic
 
@@ -42,6 +52,8 @@ This guide walks through the process of analyzing Remote Desktop Protocol (RDP) 
 2. **Follow TCP Stream**: Right-click on an RDP packet and select **Follow TCP Stream** to view the detailed session.
 3. **Analyze User Actions**: Look for signs of interaction with the host, including user commands and actions.
 4. **Extract Objects**: If necessary, export any objects or files from the session for further investigation.
+
+    ![S5 Observe ACII](https://github.com/user-attachments/assets/5284123b-5ba8-4aa8-8fee-56d352b2733b)
 
 ### Questions & Answers
 
